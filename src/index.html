@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>TABS</title>
-	<!-- <link rel="stylesheet" href="style.css"> -->
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="container">
@@ -117,9 +117,31 @@
 
 	</div>
 
-	<script src="./jquery-3.2.1.min.js"></script>
-	<script src='./tabs.js'></script>
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src='../dist/tabs.js'></script>
 	<script src='./swape.js'></script>
-	<script src='./script.js'></script>
+	<script>
+
+			function func1(){
+				return console.log('Function 1')
+			}
+
+			function func2(){
+				console.log('Function 2')
+			}
+			function func(){
+				console.log('Function for ALL')
+			}
+
+			console.log('script');
+			$('#tabs').createTabs({
+				actions:{
+					'ALL': func,
+					'tab_2a':func1,
+					'tab_3a':func2,
+				}
+			});
+			$('#tabs_2').createTabs();
+	</script>
 </body>
 </html>
